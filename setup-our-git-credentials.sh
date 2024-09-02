@@ -1,15 +1,7 @@
 #!/bin/bash
 #set -e
 ##################################################################################################################
-# Author 	: Erik Dubois
-# Website   : https://www.erikdubois.be
-# Website   : https://www.alci.online
-# Website	: https://www.arcolinux.info
-# Website	: https://www.arcolinux.com
-# Website	: https://www.arcolinuxd.com
-# Website	: https://www.arcolinuxb.com
-# Website	: https://www.arcolinuxiso.com
-# Website	: https://www.arcolinuxforum.com
+# Author 	: Minna Svartback
 ##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
@@ -52,19 +44,19 @@
 #https://blog.nillsf.com/index.php/2021/05/27/github-sso-using-password-protected-ssh-keys
 
 project=$(basename `pwd`)
-githubdir="ariser-installer"
+githubdir="svartm"
 echo "-----------------------------------------------------------------------------"
 echo "this is project https://github.com/$githubdir/$project"
 echo "-----------------------------------------------------------------------------"
 git config --global pull.rebase false
-git config --global user.name "Erik Dubois"
-git config --global user.email "erik.dubois@gmail.com"
-sudo git config --system core.editor nano
+git config --global user.name "Minna Svartback"
+git config --global user.email "minna.svartback@pm.me"
+sudo git config --system core.editor vim
 #git config --global credential.helper cache
 #git config --global credential.helper 'cache --timeout=32000'
 git config --global push.default simple
 
-git remote set-url origin git@github.com-edu:ariser-installer/$project
+git remote set-url origin git@github.com:svartm/$project
 
 echo "Everything set"
 

@@ -1,15 +1,7 @@
 #!/bin/bash
 #set -e
 ##################################################################################################################
-# Author 	: Erik Dubois
-# Website   : https://www.erikdubois.be
-# Website   : https://www.alci.online
-# Website	: https://www.arcolinux.info
-# Website	: https://www.arcolinux.com
-# Website	: https://www.arcolinuxd.com
-# Website	: https://www.arcolinuxb.com
-# Website	: https://www.arcolinuxiso.com
-# Website	: https://www.arcolinuxforum.com
+# Author 	: Minna Svartback
 ##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
@@ -145,13 +137,13 @@ echo
 	mkdir $buildFolder
 	cp -r /usr/share/archiso/configs/releng/ $buildFolder/archiso
 	echo
-	echo "Git clone ALIS"
+	echo "Git clone svartm ALIS"
 	mkdir $buildFolder/archiso/airootfs/alis
-	git clone https://github.com/ariser-installer/alis $buildFolder/archiso/airootfs/alis
+	git clone https://github.com/svartm/alis $buildFolder/archiso/airootfs/alis
 	
-	echo "Git clone ALIS-DEV"
-	mkdir $buildFolder/archiso/airootfs/alis-dev
-	git clone https://github.com/ariser-installer/alis-dev $buildFolder/archiso/airootfs/alis-dev
+	#echo "Git clone ALIS-DEV"
+	#mkdir $buildFolder/archiso/airootfs/alis-dev
+	#git clone https://github.com/ariser-installer/alis-dev $buildFolder/archiso/airootfs/alis-dev
 
 echo
 echo "################################################################## "
@@ -172,7 +164,7 @@ tput setaf 2
 echo "Phase 5 : "
 echo "- Adding time to /etc/dev-rel"
 echo "- profile.def"
-echo "- nanorc for syntax"
+#echo "- nanorc for syntax"
 echo "- alis script"
 tput sgr0
 echo "################################################################## "
@@ -191,8 +183,8 @@ echo
 	REPLACE='  ["/alis-dev/start.sh"]="0:0:755"'
 	find $buildFolder/archiso/profiledef.sh -type f -exec sed -i "/$FIND/a $REPLACE" {} \;
 
-	echo "copy nanorc"
-	cp nanorc $buildFolder/archiso/airootfs/etc/nanorc
+	#echo "copy nanorc"
+	#cp nanorc $buildFolder/archiso/airootfs/etc/nanorc
 
 	echo "copy alis"
 	mkdir -p $buildFolder/archiso/airootfs/usr/bin
