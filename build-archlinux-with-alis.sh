@@ -179,9 +179,9 @@ echo
 	REPLACE='  ["/alis/start.sh"]="0:0:755"'
 	find $buildFolder/archiso/profiledef.sh -type f -exec sed -i "/$FIND/a $REPLACE" {} \;
 
-	FIND='livecd-sound'
-	REPLACE='  ["/alis-dev/start.sh"]="0:0:755"'
-	find $buildFolder/archiso/profiledef.sh -type f -exec sed -i "/$FIND/a $REPLACE" {} \;
+	#FIND='livecd-sound'
+	#REPLACE='  ["/alis-dev/start.sh"]="0:0:755"'
+	#find $buildFolder/archiso/profiledef.sh -type f -exec sed -i "/$FIND/a $REPLACE" {} \;
 
 	#echo "copy nanorc"
 	#cp nanorc $buildFolder/archiso/airootfs/etc/nanorc
@@ -194,13 +194,13 @@ echo
 	REPLACE='  ["/usr/bin/alis"]="0:0:755"'
 	find $buildFolder/archiso/profiledef.sh -type f -exec sed -i "/$FIND/a $REPLACE" {} \;
 
-	echo "copy alis-dev"
-	mkdir -p $buildFolder/archiso/airootfs/usr/bin
-	cp alis-dev 	$buildFolder/archiso/airootfs/usr/bin	
+	#echo "copy alis-dev"
+	#mkdir -p $buildFolder/archiso/airootfs/usr/bin
+	#cp alis-dev 	$buildFolder/archiso/airootfs/usr/bin	
 
-	FIND='livecd-sound'
-	REPLACE='  ["/usr/bin/alis-dev"]="0:0:755"'
-	find $buildFolder/archiso/profiledef.sh -type f -exec sed -i "/$FIND/a $REPLACE" {} \;
+	#FIND='livecd-sound'
+	#REPLACE='  ["/usr/bin/alis-dev"]="0:0:755"'
+	#find $buildFolder/archiso/profiledef.sh -type f -exec sed -i "/$FIND/a $REPLACE" {} \;
 
 #echo
 #echo "################################################################## "
