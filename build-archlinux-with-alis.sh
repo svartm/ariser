@@ -4,7 +4,7 @@
 # Author 	: Minna Svartback
 ##################################################################################################################
 #
-#   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
+#   Fork of Ariser project to build custom archiso with ALIS.
 #
 ##################################################################################################################
 #tput setaf 0 = black 
@@ -31,8 +31,8 @@ echo
 
 	# setting of the general parameters
 	archisoRequiredVersion="archiso 78-1"
-	buildFolder=$HOME"/Ariser-build"
-	outFolder=$HOME"/Ariser-Out"
+	buildFolder=$HOME"/rift-build"
+	outFolder=$HOME"/rift-out"
 	archisoVersion=$(sudo pacman -Q archiso)
 
 	echo "################################################################## "
@@ -102,7 +102,7 @@ echo
 
 			echo "################################################################"
 			echo "#########  "$package" has been installed"
-			echo "################################################################"
+			echo "##################My version ##############################################"
 
 		else
 
@@ -137,7 +137,7 @@ echo
 	mkdir $buildFolder
 	cp -r /usr/share/archiso/configs/releng/ $buildFolder/archiso
 	echo
-	echo "Git clone svartm ALIS"
+	echo "Git clone ALIS from svartm/alis"
 	mkdir $buildFolder/archiso/airootfs/alis
 	git clone https://github.com/svartm/alis $buildFolder/archiso/airootfs/alis
 	
@@ -165,6 +165,7 @@ echo "Phase 5 : "
 echo "- Adding time to /etc/dev-rel"
 echo "- profile.def"
 #echo "- nanorc for syntax"
+echo "- vimrc for syntax"
 echo "- alis script"
 tput sgr0
 echo "################################################################## "
@@ -185,6 +186,9 @@ echo
 
 	#echo "copy nanorc"
 	#cp nanorc $buildFolder/archiso/airootfs/etc/nanorc
+
+	echo "copy vimrc"
+	cp vimrc $buildFolder/archiso/airootfs/etc/vimrc
 
 	echo "copy alis"
 	mkdir -p $buildFolder/archiso/airootfs/usr/bin
