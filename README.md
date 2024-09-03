@@ -1,1 +1,1 @@
-# Ariser
+# Rift Linux ISO
