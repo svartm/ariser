@@ -137,9 +137,9 @@ echo
 	mkdir $buildFolder
 	cp -r /usr/share/archiso/configs/releng/ $buildFolder/archiso
 	echo
-	echo "Git clone ALIS from svartm/alis"
+	echo "Git clone ALIS from svartm/alis-rift"
 	mkdir $buildFolder/archiso/airootfs/alis
-	git clone https://github.com/svartm/alis $buildFolder/archiso/airootfs/alis
+	git clone https://github.com/svartm/alis-rift $buildFolder/archiso/airootfs/alis
 	
 	#echo "Git clone ALIS-DEV"
 	#mkdir $buildFolder/archiso/airootfs/alis-dev
